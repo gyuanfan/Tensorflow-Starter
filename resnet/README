@@ -1,0 +1,41 @@
+##### Yuanfang Guan Dec 20, 2017 #####
+
+This is a starter code for Tensorflow with ResNet utilizing an easy dataset https://www.kaggle.com/c/statoil-iceberg-classifier-challenge.  2-fold CV performance is around 0.24-0.27
+
+
+/* The FILES */
+
+sh bash.sh ## run the training and prediction
+
+train.py ## separate the training data in list_train into 5 parts, with nested training to record the best epoch and create 5 models into the dir model
+
+predict.py ## predicting the testing data in list_test using one of the models
+
+list_train ## training image list in the format of 'image\tlabel\n'
+
+list_test ## testing image list in the format of 'image\tlabel\n'
+
+
+/* How to play with this */
+
+//* Changing input data *//
+
+1. Change list_train and list_test with your image list. 
+2. Change image input size : change 75 to the image size you need. 
+3. Change number of channels: flags.DEFINE_integer('channels', 2, '') to 1; change line ~170 to line ~200 in train.py to fit the number of channels; 
+
+
+//* Changing parameters or other models in *//
+
+1. First set starts at line 20 in train.py : max_epoch=200 (number of times reading through all images here) , batch=16,  max_rotate=0, max_shift=20, max_scale=1.2, min_scale=0.9
+2. Second set starts at line 61 to line 80 in train.py where you could change training parameters and models being called
+
+
+
+
+
+
+
+
+
+
