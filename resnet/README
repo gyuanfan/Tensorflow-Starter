@@ -33,6 +33,10 @@ list_test ## testing image list in the format of 'image\tlabel\n'
 
 
 
+sh bash_offline.sh
+call the local version and allows to modify the network
+
+
 
 
 
